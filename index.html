@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUDOKU</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="build/app.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="icons/all.css">
+
+</head>
+
+<body>
+    <header class="">
+        <nav class="menu container-md navbar navbar-expand-md navbar-dark fixed-top">
+
+            <div class="col-5">
+                <h2>SUDOKU</h2>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="col-6 ml-100 collapse navbar-collapse" id="navbarCollapse">
+                <div class="btn-group mr-sm-4 dif">
+                    <button id="diff" type="button" class=" btn dropdown-toggle tnav" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        DIFFICULTY
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#"></a>
+                        <button class="diff dropdown-item" value="easy">Easy </button>
+                        <button class="diff dropdown-item" value="medium">Medium</button>
+                        <div class="dropdown-divider"></div>
+                        <button class="diff dropdown-item" value="hard">Hard</button>
+                    </div>
+                </div>
+                <div class="btn-group mr-sm-4">
+                    <button type="button" class=" btn dropdown-toggle tnav" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span id="times">TIME</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#"></a>
+                        <button class="timeSel dropdown-item" value="five">5 min</button>
+                        <button class="timeSel dropdown-item" value="ten">10 min</button>
+                        <button class="timeSel dropdown-item" value="twenty">20 min</button>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button type="button" class="btn  mr-0 sgen" id="gen">Generate Board</button>
+                </div>
+                
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid d-flex mt-20 sud">
+
+
+        <div>
+            <div class="container-md mt-2 mb-3 inc">
+                <div class="row justify-center">
+                    <div class="mr-6">DIFFICULTY : <span id="dif">EASY</span></div>
+                    <div class="ml-6 inc">HINTS : <span id="hints">3</span> </div>
+                </div>
+               
+            </div>
+            <div class="container-md mt-2 mb-3 imf">
+                <div class="row justify-center">
+                    <div class="mr-8 incs" id="timer">10:00</div>
+                    
+                </div>
+               
+            </div>
+            <table class="justify-center">
+                <tbody>
+                    <tr>
+                        <td>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><button class="nums" id="0"></button></td>
+                                        <td><button class="nums" id="1"></button></td>
+                                        <td><button class="nums" id="2"></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button class="nums" id="9"></button></td>
+                                        <td><button class="nums" id="10"></button></td>
+                                        <td><button class="nums" id="11"></button></td>
+                                    </tr>
+                                    <tr>
+                                        <td><button class="nums" id="18"></button></td>
+                                        <td><button class="nums" id="19"></button></td>
+                                        <td><button class="nums" id="20"></button></td>
+                                    </tr>
+                                </tbody>
+
+                            </table>
+
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td><button class="nums" id="3"></button></td>
+                                    <td><button class="nums" id="4"></button></td>
+                                    <td><button class="nums" id="5"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="12"></button></td>
+                                    <td><button class="nums" id="13"></button></td>
+                                    <td><button class="nums" id="14"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="21"></button></td>
+                                    <td><button class="nums" id="22"></button></td>
+                                    <td><button class="nums" id="23"></button></td>
+                                </tr>
+                            </table>
+
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td><button class="nums" id="6"></button></td>
+                                    <td><button class="nums" id="7"></button></td>
+                                    <td><button class="nums" id="8"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="15"></button></td>
+                                    <td><button class="nums" id="16"></button></td>
+                                    <td><button class="nums" id="17"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="24"></button></td>
+                                    <td><button class="nums" id="25"></button></td>
+                                    <td><button class="nums" id="26"></button></td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td><button class="nums" id="27"></button></td>
+                                    <td><button class="nums" id="28"></button></td>
+                                    <td><button class="nums" id="29"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="36"></button></td>
+                                    <td><button class="nums" id="37"></button></td>
+                                    <td><button class="nums" id="38"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="45"></button></td>
+                                    <td><button class="nums" id="46"></button></td>
+                                    <td><button class="nums" id="47"></button></td>
+                                </tr>
+                            </table>
+
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td><button class="nums" id="30"></button></td>
+                                    <td><button class="nums" id="31"></button></td>
+                                    <td><button class="nums" id="32"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="39"></button></td>
+                                    <td><button class="nums" id="40"></button></td>
+                                    <td><button class="nums" id="41"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="48"></button></td>
+                                    <td><button class="nums" id="49"></button></td>
+                                    <td><button class="nums" id="50"></button></td>
+                                </tr>
+                            </table>
+
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td><button class="nums" id="33"></button></td>
+                                    <td><button class="nums" id="34"></button></td>
+                                    <td><button class="nums" id="35"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="42"></button></td>
+                                    <td><button class="nums" id="43"></button></td>
+                                    <td><button class="nums" id="44"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="51"></button></td>
+                                    <td><button class="nums" id="52"></button></td>
+                                    <td><button class="nums" id="53"></button></td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td><button class="nums" id="54"></button></td>
+                                    <td><button class="nums" id="55"></button></td>
+                                    <td><button class="nums" id="56"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="63"></button></td>
+                                    <td><button class="nums" id="64"></button></td>
+                                    <td><button class="nums" id="65"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="72"></button></td>
+                                    <td><button class="nums" id="73"></button></td>
+                                    <td><button class="nums" id="74"></button></td>
+                                </tr>
+                            </table>
+
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td><button class="nums" id="57"></button></td>
+                                    <td><button class="nums" id="58"></button></td>
+                                    <td><button class="nums" id="59"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="66"></button></td>
+                                    <td><button class="nums" id="67"></button></td>
+                                    <td><button class="nums" id="68"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="75"></button></td>
+                                    <td><button class="nums" id="76"></button></td>
+                                    <td><button class="nums" id="77"></button></td>
+                                </tr>
+                            </table>
+
+                        </td>
+                        <td>
+                            <table>
+                                <tr>
+                                    <td><button class="nums" id="60"></button></td>
+                                    <td><button class="nums" id="61"></button></td>
+                                    <td><button class="nums" id="62"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="69"></button></td>
+                                    <td><button class="nums" id="70"></button></td>
+                                    <td><button class="nums" id="71"></button></td>
+                                </tr>
+                                <tr>
+                                    <td><button class="nums" id="78"></button></td>
+                                    <td><button class="nums" id="79"></button></td>
+                                    <td><button class="nums" id="80"></button></td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="buttons cont" class="row my-3">
+                <button class="btn input-button m-1 m-md-2" id="01">1</button>
+                <button class="btn input-button m-1 m-md-2" id="02">2</button>
+                <button class="btn input-button m-1 m-md-2" id="03">3</button>
+                <button class="btn input-button m-1 m-md-2" id="04">4</button>
+                <button class="btn input-button m-1 m-md-2" id="05">5</button>
+                <button class="btn input-button m-1 m-md-2" id="06">6</button>
+                <button class="btn input-button m-1 m-md-2" id="07">7</button>
+                <button class="btn input-button m-1 m-md-2" id="08">8</button>
+                <button class="btn input-button m-1 m-md-2" id="09">9</button>
+                <button class="btn input-button m-1 m-md-2" id="00">
+                    <i class="far fa-trash-alt"></i>
+                </button>
+            </div>
+
+            <div class="container mt-3 mb-7">
+                <div class="row justify-center">
+
+                    <div class="">
+                        <button type="button" class="btn btn-lg btn-secondary mr-4" id="hintnum">HINT</button>
+                        <button type="button" class="btn btn-lg strt ml-4" id="start">START</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <div class="container-lg mt-20 mb-10 inst">
+        <h2 id="inst">INSTRUCTIONS</h2>
+        <ol class="list-group list-group-numbered">
+            <li class="list-group-item">1. Each New Game has a unique Solution</li>
+            <li class="list-group-item">2. You may use the SOLVE button only after Half the Selected Time is OVER</li>
+            <li class="list-group-item">3. Make sure to click on Generate Board after making the selections, or to start A New Game. </li>
+            <li class="list-group-item">4. To Enter a number, Select the number from the options 1-9 given below the grid
+                and then click on the cell of the grid where you want it to go.
+            </li>
+            <li class="list-group-item">5. If you place a digit which already exists in the same row, column or sub-grid 
+                then the cell will flash red while inserting.
+            </li>
+          </ol>
+    </div>
+    <div class="bg-dark mb-0" id="Sfoot">
+        <nav class="justify-content-center navbar navbar-expand-md navbar-dark  text-center my-0 bottom container-fluid"
+            id="foot">
+            <div class="row text-center">
+
+                <div class="col-12 border-bottom">
+                    <a class="navbar-brand not" href="#"><i class="fab fa-facebook"></i></a>
+                    <a class="navbar-brand not" href="#"><i class="fab fa-instagram"></i></a>
+                    <a class="navbar-brand" href="https://github.com/tiger-yash"><i class="fab fa-github"></i></a>
+                    <a class="navbar-brand not" href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+
+                <h4 class="col-12 my-1">
+                    <i class="fas fa-code"></i> with <i class="fas fa-heart"></i> by Yash Raj !!!
+                </h4>
+            </div>
+
+        </nav>
+    </div>
+
+    <script defer src="app.js"></script>
+    <!-- <script defer src="alt.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="icons/all.js"></script>
+</body>
+
+</html>

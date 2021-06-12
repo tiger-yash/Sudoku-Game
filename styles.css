@@ -1,0 +1,177 @@
+body {
+    padding-top: 3rem;
+    min-height:100vh;
+    padding-bottom: 0;
+    color: white;
+    font-family: 'Open Sans';
+    background-color: #e5ecf3;
+  }
+
+  nav.navbar {
+    background-color: #6e9641;
+    font-size:25px;
+    
+  }
+
+  @media (max-width: 600px) {
+    #foot{
+        font-size: 2em;
+        
+      }
+  }
+  .menu{
+    top:-95px;
+    border: 10px solid lightgrey;
+    border-radius: 80px;
+    padding: 40px;
+    padding-top: 100px;
+    padding-bottom: 5px;
+    
+  }
+  @media (max-width:764px) {
+      .navbar-collapse{
+        padding-top: 30px;
+        padding-bottom: 20px;
+        padding-right:0px;
+      }  
+      .dif{
+        padding-bottom: 10px;
+      }
+      #gen{
+        margin-top:10px;
+     
+      }
+  }
+
+  table{
+    
+    border: 5px solid #457c00;
+    border-collapse: collapse;
+    
+    text-align: center;
+    align-self: center;
+    
+  }
+  tr table{
+    
+    border: 1px solid black;
+    border-collapse: collapse;
+    height: 100%;
+    width: 100%;
+    
+  }
+  tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+    
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+td td {
+    border-collapse: collapse;
+    border: 1px solid #457c00;
+    width: 50px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 1.4em;
+    color: rgb(9, 94, 79);
+    z-index: 100;
+}
+td{
+    padding:0;
+}
+.sud{
+    justify-content: center;
+}
+#Sfoot{
+    
+    width:100%;
+ 
+    position:relative;
+    bottom:0px;
+    margin-bottom:0px;
+    
+}
+td .nums:focus{
+    outline:none;
+}
+td button{
+    height:100%;
+    width:100%;
+    display:block;
+    border:none;
+    outline:none;
+}
+.input-button{
+  background-color: rgb(93, 148, 199);
+  border-radius: 40%;
+  font-size: 1.5rem;
+}
+.input-button:focus{
+  background-color: rgba(93, 148, 199,0.3);
+}
+.inc{
+  font-size: 1.2rem;
+  color:#5390d9;
+  font-weight: 700;
+
+}
+.incs{
+  font-size: 2.5rem;
+  color:#34a0a4;
+  font-weight: 700;
+}
+.tnav{
+  background-color: #adc178;
+}
+.sgen{
+  background-color:#aacc00;
+}
+.strt{
+  background-color: #2dc653;
+  color:white;
+}
+#dif,#hints{
+  color:#43aa8b;
+}
+@media (max-width:480px){
+  .input-button{
+    font-size: 1.2rem;
+  }
+}
+@media (max-width:380px){
+  .input-button{
+    font-size: 0.5rem;
+  }
+}
+
+.inst{
+  color:#e85d04;
+  font-size: 1.5rem;
+  background-color: #d9ed92;
+  padding-bottom: 10px;
+}
+.tnav{
+  color:rgb(5, 61, 52);
+}
+#gen{
+  color:rgb(5, 61, 52);
+}
+#inst{
+  font-size: 2rem;
+  color:#6a040f;
+  font-weight: 600;
+}
+
+@media (max-width:500px){
+  .inst{
+    color:#e85d04;
+    font-size: 1.2rem;
+    background-color: #d9ed92;
+    padding-bottom: 10px;
+  }
+}
