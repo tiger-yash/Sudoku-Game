@@ -309,9 +309,26 @@ nums.forEach(ent =>{
         if(left===0){
             let won=1;
             for (let i = 0; i < 81; i++) {
-                if (document.getElementById(`${i}`).innerHTML !== solved[i]) {
-                    won=0;break;
+                let chk=document.getElementById(`${i}`).innerHTML;
+                for (let j=0;j!==i && j<=8; j++) {
+                    if (document.getElementById(`${pg%9+9*i}`).innerHTML === chk) {
+                        won=0;
+                        break;
+                    }
                 }
+                for (let j=0;j!==i && j<=8; j++) {
+                    if (document.getElementById(`${parseInt(pg/9)*9+i}`).innerHTML === chk) {
+                        won=0;
+                        break;
+                    }
+                }
+                block=returnBlock(i);
+                for (let j=0;j!==i && j<=8; j++) {
+                    if (document.getElementById(`${Math.floor(block/3)*27+i%3+9*Math.floor(i/3)+3*(block%3)}`).innerHTML === chk) {
+                        won=0;
+                    }
+                }
+                if(won===0) break;
             }
             if(won===1){
                 clearInterval(x);
@@ -440,8 +457,6 @@ function newBoard(mode) {
             document.getElementById(`${i}`).style.backgroundColor = "#e5ecf3";
         }
     }
-    
-
 }
 
 function chngBoard() {
