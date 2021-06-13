@@ -285,22 +285,27 @@ nums.forEach(ent =>{
         }
         else if(unsolved[pg]==="." && ent.style.backgroundColor!=="#e9d8a6"){
             ent.style.backgroundColor="";
+            let l=0;
             for (let i=0; i<=8; i++) {
                 if (document.getElementById(`${pg%9+9*i}`).innerHTML === selOpt[1]) {
                     ent.style.backgroundColor="#da5552";
+                    ++left;
+                    l=1;
                     break;
                 }
             }
-            for (let i=0; i<=8; i++) {
+            for (let i=0;l===0 && i<=8; i++) {
                 if (document.getElementById(`${parseInt(pg/9)*9+i}`).innerHTML === selOpt[1]) {
                     ent.style.backgroundColor="#da5552";
+                    ++left;
+                    l=1;
                     break;
                 }
             }
             block=returnBlock(pg);
-            for (let i=0; i<=8; i++) {
+            for (let i=0;l===0 && i<=8; i++) {
                 if (document.getElementById(`${Math.floor(block/3)*27+i%3+9*Math.floor(i/3)+3*(block%3)}`).innerHTML === selOpt[1]) {
-                    ent.style.backgroundColor="#da5552";break;
+                    ent.style.backgroundColor="#da5552";++left;break;
                 }
             }
             ent.innerHTML=selOpt[1];--left;selOpt="NA";
@@ -457,6 +462,7 @@ function newBoard(mode) {
             document.getElementById(`${i}`).style.backgroundColor = "#e5ecf3";
         }
     }
+    console.log(solved);
 }
 
 function chngBoard() {
